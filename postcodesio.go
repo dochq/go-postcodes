@@ -27,19 +27,19 @@ var (
 // calling function
 //
 // Peter Holt <peter.holt@dochq.co.uk>
-func Lookup(code string) (Result, error) {
+func Lookup(code string) (HTTPResultSingle, error) {
 	var res HTTPResultSingle
 	var err error
 
 	if code == "" {
 		err = fmt.Errorf("Postcode empty")
-		return res.Result, err
+		return res, err
 	}
 
 	resp, err := httpClient.Get(ApiBaseUrl + "/postcodes/" + code)
 
 	if err != nil {
-		return res.Result, err
+		return res, err
 	}
 
 	defer resp.Body.Close()
@@ -47,8 +47,8 @@ func Lookup(code string) (Result, error) {
 	err = json.NewDecoder(resp.Body).Decode(&res)
 
 	if err != nil {
-		return res.Result, err
+		return res, err
 	}
 
-	return res.Result, nil
+	return res, nil
 }

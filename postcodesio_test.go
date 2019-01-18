@@ -13,5 +13,5 @@ func ExampleLookup() {
 		fmt.Println(err)
 	}
 
-	fmt.Println(post)
+	fmt.Println(post.Result)
 }
