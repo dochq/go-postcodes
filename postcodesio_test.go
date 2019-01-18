@@ -3,7 +3,7 @@ package postcodesio
 // Example usage:
 import (
 	"fmt"
-	"github.com/B1scuit/go-postcodes"
+	"github.com/DocHQ/go-postcodes"
 )
 
 func ExampleLookup() {
