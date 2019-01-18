@@ -16,25 +16,27 @@ var (
 )
 
 func Lookup(code string) (Result, error) {
-	var res Result
+	var res HTTPResultSingle
 	var err error
 
 	if code == "" {
 		err = fmt.Errorf("Postcode empty")
-		return res, err
+		return res.Result, err
 	}
 
 	resp, err := httpClient.Get(ApiBaseUrl + "/postcodes/" + code)
 
 	if err != nil {
-		return res, err
+		return res.Result, err
 	}
 
 	defer resp.Body.Close()
 
-	if err := json.NewDecoder(resp.Body).Decode(&res); err != nil {
-		return res, err
+	err = json.NewDecoder(resp.Body).Decode(&res)
+
+	if err != nil {
+		return res.Result, err
 	}
 
-	return res, nil
+	return res.Result, nil
 }
