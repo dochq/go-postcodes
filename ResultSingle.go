@@ -1,6 +1,6 @@
 package postcodesio
 
-type HTTPResultSingle struct {
+type ResultSingle struct {
 	Status int    `json:"status,omitempty"`
 	Result Result `json:"result,omitempty"`
 }

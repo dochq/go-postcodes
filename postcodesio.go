@@ -27,8 +27,8 @@ var (
 // calling function
 //
 // Peter Holt <peter.holt@dochq.co.uk>
-func Lookup(code string) (HTTPResultSingle, error) {
-	var res HTTPResultSingle
+func Lookup(code string) (ResultSingle, error) {
+	var res ResultSingle
 	var err error
 
 	if code == "" {
