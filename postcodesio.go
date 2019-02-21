@@ -6,6 +6,7 @@
 package postcodesio
 
 import (
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"net/http"
@@ -19,8 +20,16 @@ const (
 
 var (
 	// Package wide container for the HTTP client
-	httpClient = &http.Client{Timeout: 10 * time.Second}
+	httpClient *http.Client
 )
+
+func init() {
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
+
+	httpClient = &http.Client{Timeout: 10 * time.Second, Transport: tr}
+}
 
 // Function to perform a postcode lookup, A postcode is provided as a parameter
 // the postcode is searched and the corrisponding retsult is sent back to the
