@@ -1,6 +1,6 @@
 package postcodesio
 
-// Postcode search result, this result contains the data about the postcode
+// Result contains the data about the postcode
 // This is shared across Lookup and LookupBulk
 //
 // Peter Holt <peter.holt@dochq.co.uk>

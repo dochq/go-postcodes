@@ -1,4 +1,4 @@
-// go-postcodes is a golang package to ease the use, of the Postcodes.io API
+// Package postcodesio is a golang package to ease the use, of the Postcodes.io API
 // The name of the repo and the package differ since golang has isse with hyphens
 // in package names
 //
@@ -31,7 +31,7 @@ func init() {
 	httpClient = &http.Client{Timeout: 10 * time.Second, Transport: tr}
 }
 
-// Function to perform a postcode lookup, A postcode is provided as a parameter
+// Lookup function to perform a postcode lookup, A postcode is provided as a parameter
 // the postcode is searched and the corrisponding retsult is sent back to the
 // calling function
 //
