@@ -1,6 +1,6 @@
 package postcodesio
 
-// Organisation structure to return a bulk result
+// ResultsBulk is an organisation structure to return a bulk result
 //
 // Peter Holt <peter.holt@dochq.co.uk>
 type ResultsBulk struct {

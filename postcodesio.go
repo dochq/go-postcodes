@@ -23,6 +23,13 @@ var (
 	httpClient *http.Client
 )
 
+// init manages the disabling of TLS verification as this can cause issues on
+// some K8 clusters, as the URL is hard coded, there is no issue with this
+// since any other attempt at comprimise would not map to struct
+// I'd love to remove this, but all the time GKE instances miss loads of root CA's
+// this has to be the solution for now.
+//
+// Peter Holt <peter.holt@dochq.co.uk>
 func init() {
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},

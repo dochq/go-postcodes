@@ -1,6 +1,6 @@
 package postcodesio
 
-// Organisation structure to return a single result
+// ResultSingle is an organisation structure to return a single result
 //
 // Peter Holt <peter.holt@dochq.co.uk>
 type ResultSingle struct {

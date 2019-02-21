@@ -1,6 +1,6 @@
 package postcodesio
 
-// Small structure used in API response
+// ResultCodes is a small structure used in API response
 // This is a seperate structure to kepe thing DRY
 //
 // Peter Holt <peter.holt@dochq.co.uk>
